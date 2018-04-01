@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <!-- classPathEntry:数据库的JDBC驱动的jar包地址,已配置到Maven依赖 -->
+  <context id="context1" >
+    <!--配置 mapper生成方式 -->
+    <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+      <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+    </plugin>
+
+    <commentGenerator>
+      <property name="suppressDate" value="true"/>
+      <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+    <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+    <!--<jdbcConnection driverClass="org.h2.Driver"	 connectionURL="jdbc:h2:tcp://localhost/~/test" userId="sa" password="" />-->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"	 connectionURL="jdbc:mysql://mysql.svc:3306/test001" userId="root" password="tzj" />
+    <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
+			NUMERIC 类型解析为java.math.BigDecimal -->
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    <!-- targetProject:自动生成代码的位置 -->
+    <javaModelGenerator targetPackage="com.touzhijia.project.entity" targetProject="src/main/java" />
+    <sqlMapGenerator targetPackage="com.touzhijia.project.mapper" targetProject="src/main/java" />
+    <javaClientGenerator targetPackage="com.touzhijia.project.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+
+    <!-- tableName:表名(%代表所有表),domainObjectName:对应于数据库表的javaBean类名 -->
+    <table schema="public" tableName="%"
+      enableCountByExample="false"
+      enableUpdateByExample="false"
+      enableDeleteByExample="false"
+      enableSelectByExample="false"
+      selectByExampleQueryId="false" />
+  </context>
+</generatorConfiguration>
