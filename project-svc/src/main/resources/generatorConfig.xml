@@ -15,19 +15,19 @@
     </commentGenerator>
     <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
     <!--<jdbcConnection driverClass="org.h2.Driver"	 connectionURL="jdbc:h2:tcp://localhost/~/test" userId="sa" password="" />-->
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver"	 connectionURL="jdbc:mysql://mysql.svc:3306/test001" userId="root" password="tzj" />
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"	 connectionURL="jdbc:mysql://192.168.2.67:3306/profit_db" userId="leishihua" password="Nkj!09_kjBVk987" />
     <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
 			NUMERIC 类型解析为java.math.BigDecimal -->
     <javaTypeResolver>
       <property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
     <!-- targetProject:自动生成代码的位置 -->
-    <javaModelGenerator targetPackage="com.touzhijia.project.entity" targetProject="src/main/java" />
-    <sqlMapGenerator targetPackage="com.touzhijia.project.mapper" targetProject="src/main/java" />
-    <javaClientGenerator targetPackage="com.touzhijia.project.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+    <javaModelGenerator targetPackage="com.tfb.project.domain.entity" targetProject="src/main/java" />
+    <sqlMapGenerator targetPackage="com.tfb.project.mapper" targetProject="src/main/java" />
+    <javaClientGenerator targetPackage="com.tfb.project.mapper" targetProject="src/main/java" type="XMLMAPPER" />
 
     <!-- tableName:表名(%代表所有表),domainObjectName:对应于数据库表的javaBean类名 -->
-    <table schema="public" tableName="%"
+    <table schema="public" tableName="t_profit_day_new"
       enableCountByExample="false"
       enableUpdateByExample="false"
       enableDeleteByExample="false"
